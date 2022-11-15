@@ -46,7 +46,7 @@ public class User implements UserDetails, Serializable{
 		
 	}
 
-	public User(Long id, String firstName, String lastName, String email, String password) {
+	public User(Long id, String email, String password) {
 		super();
 		this.id = id;
 		this.email = email;
