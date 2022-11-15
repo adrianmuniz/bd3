@@ -117,8 +117,8 @@ public class EmployeeControllerIT {
 					.accept(MediaType.APPLICATION_JSON));
 		
 		result.andExpect(status().isUnprocessableEntity());
-		result.andExpect(jsonPath("$.errors[0].fieldName").value("name"));
-		result.andExpect(jsonPath("$.errors[0].message").value("Campo requerido"));
+		result.andExpect(jsonPath("$.erros[0].fieldName").value("name"));
+		result.andExpect(jsonPath("$.erros[0].message").value("Campo requerido"));
 	}
 
 	@Test
@@ -137,8 +137,8 @@ public class EmployeeControllerIT {
 					.accept(MediaType.APPLICATION_JSON));
 		
 		result.andExpect(status().isUnprocessableEntity());
-		result.andExpect(jsonPath("$.errors[0].fieldName").value("email"));
-		result.andExpect(jsonPath("$.errors[0].message").value("Email inválido"));
+		result.andExpect(jsonPath("$.erros[0].fieldName").value("email"));
+		result.andExpect(jsonPath("$.erros[0].message").value("Email inválido"));
 	}
 
 	@Test
@@ -157,7 +157,7 @@ public class EmployeeControllerIT {
 					.accept(MediaType.APPLICATION_JSON));
 		
 		result.andExpect(status().isUnprocessableEntity());
-		result.andExpect(jsonPath("$.errors[0].fieldName").value("departmentId"));
-		result.andExpect(jsonPath("$.errors[0].message").value("Campo requerido"));
+		result.andExpect(jsonPath("$.erros[0].fieldName").value("departmentId"));
+		result.andExpect(jsonPath("$.erros[0].message").value("Campo requerido"));
 	}
 }
